@@ -414,3 +414,150 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_testAddLayer(JNIEnv *env, jclas
         return false;
     }
 }
+extern "C"
+JNIEXPORT jboolean JNICALL
+Java_com_lansong_testNative_TestNativeRenderAPI2_testAddLayerWithNv21(JNIEnv *env, jclass clazz,
+                                                                      jlong handle, jint width,
+                                                                      jint height,jint rotate, jbyteArray nv21) {
+    ZSRender *pRender = (ZSRender *) handle;
+    if(pRender != nullptr){
+        ZSLayer *layer=pRender->addNv21Layer(width, height,rotate);
+        if(layer!= nullptr){
+            layer->setScaledValue(540,540); //设置缩放值
+            layer->setPosition(LEFT_TOP); //设置位置
+            layer ->setName((int8_t *) "nv21"); //设置一个名字, 用于调试.
+            layer->setRotation(90); // 旋转90度
+            layer->setScaleType(ORIGINAL); //缩放 原始大小
+            unsigned  char *src_buf= LOCK_ARRAY_FROM_JVM(nv21);
+            layer->pushNv21DataFromOut(src_buf);
+            UNLOCK_ARRAY_TO_JVM(nv21,src_buf);
+        }
+        return true;
+    }else{
+        return false;
+    }
+}
+
+extern "C"
+JNIEXPORT jboolean JNICALL
+Java_com_lansong_testNative_TestNativeRenderAPI2_testRemoveMattingLayer(JNIEnv *env, jclass clazz,
+                                                                        jlong handle) {
+    ZSRender *pRender = (ZSRender *) handle;
+    if(pRender != nullptr){
+        ZSLayer *layer =pRender->getMattingLayer();
+        pRender-> removeLayer(layer);
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+extern "C"
+JNIEXPORT jboolean JNICALL
+Java_com_lansong_testNative_TestNativeRenderAPI2_testRemoveBackGroundLayer(JNIEnv *env, jclass clazz,
+                                                                           jlong handle) {
+    ZSRender *pRender = (ZSRender *) handle;
+    if(pRender != nullptr){
+        ZSLayer *layer =pRender->getBackGroundLayer();
+        pRender-> removeLayer(layer);
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+
+
+extern "C"
+JNIEXPORT jboolean JNICALL
+Java_com_lansong_testNative_TestNativeRenderAPI2_testGetMattingLayer(JNIEnv *env, jclass clazz,
+                                                                     jlong handle) {
+    ZSRender *pRender = (ZSRender *) handle;
+    if(pRender != nullptr){
+        ZSLayer *layer =pRender->getMattingLayer();
+        if(layer!= nullptr){
+
+            return true;
+        }else{
+            return false;
+        }
+    }
+    else{
+        return false;
+    }
+}
+
+
+extern "C"
+JNIEXPORT jboolean JNICALL
+Java_com_lansong_testNative_TestNativeRenderAPI2_testGetBackGroundLayer(JNIEnv *env, jclass clazz,
+                                                                        jlong handle) {
+    ZSRender *pRender = (ZSRender *) handle;
+    if(pRender != nullptr){
+        ZSLayer *layer =pRender->getBackGroundLayer();
+        if(layer!= nullptr){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    else{
+        return false;
+    }
+}
+extern "C"
+JNIEXPORT jboolean JNICALL
+Java_com_lansong_testNative_TestNativeRenderAPI2_testGetAllLayer(JNIEnv *env, jclass clazz,
+                                                                 jlong handle) {
+    ZSRender *pRender = (ZSRender *) handle;
+    if(pRender != nullptr){
+        std::list<ZSLayer *> *layers =pRender->getAllLayers();
+        // 从layers 遍历所有图层
+        for (std::list<ZSLayer *>::iterator it = layers->begin(); it != layers->end(); it++) {
+            ZSLayer *layer = *it;
+            std::cout << *it;
+            LOGI("layer name=%s",layer->getName());
+            LOGI("layer 容器宽度=%d",layer->getCompWidth());
+            LOGI("layer 容器高度=%d",layer->getCompHeight());
+            LOGI("layer 数据的宽度=%d",layer->getDataWidth());
+            LOGI("layer 数据的高度=%d",layer->getDataHeight());
+            LOGI("layer 获取在容器中的图层位置=%d",layer->getLayerPositionAtRender());
+            LOGI("layer 位置X坐标=%f",layer->getPositionX());
+            LOGI("layer 位置Y坐标=%f",layer->getPositionY());
+            LOGI("layer 旋转角度=%f",layer->getRotation());
+            LOGI("layer 获取缩放后的宽度=%f", layer ->getScaleWidth());
+            LOGI("layer 获取缩放后的高度=%f", layer ->getScaleHeight());
+            LOGI("layer 获取原始宽度=%d", layer ->getOriginalWidth());
+            LOGI("layer 获取原始高度=%d", layer ->getOriginalHeight());
+        }
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+extern "C"
+JNIEXPORT jboolean JNICALL
+Java_com_lansong_testNative_TestNativeRenderAPI2_testSetMattingLayerPosition(JNIEnv *env,
+                                                                             jclass clazz,
+                                                                             jlong handle,
+                                                                             jint position) {
+
+    ZSRender *pRender = (ZSRender *) handle;
+    // 设置图层上下级的位置
+    if(pRender != nullptr){
+        ZSLayer *layer =pRender->getBackGroundLayer();
+        if(layer!= nullptr){
+            pRender->setLayerPosition(layer,position);
+            return true;
+        }else{
+            return false;
+        }
+    }
+    else{
+        return false;
+    }
+
+
+}

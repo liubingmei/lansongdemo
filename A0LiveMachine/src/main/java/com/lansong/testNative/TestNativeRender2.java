@@ -102,6 +102,30 @@ public class TestNativeRender2 {
     {
         return handler!=0 && TestNativeRenderAPI2.testAddLayer(handler,width,height,rgba);
     }
+    public boolean testAddLayerWithNv21 (int width,int height,int rotate,byte[] rgba)
+    {
+        return handler!=0 && TestNativeRenderAPI2.testAddLayerWithNv21(handler,width,height,rotate,rgba);
+    }
+
+    // 删除图层
+    public boolean testRemoveMattingLayer()
+    {
+        return handler!=0 && TestNativeRenderAPI2.testRemoveMattingLayer(handler);
+    }
+    public boolean testRemoveBackGroundLayer(){
+        return handler!=0 && TestNativeRenderAPI2.testRemoveBackGroundLayer(handler);
+    }
+
+    // 获取图层
+    public boolean testGetMattingLayer(){
+        return handler!=0 && TestNativeRenderAPI2.testGetMattingLayer(handler);
+    }
+    public boolean testGetBackGroundLayer(){
+        return handler!=0 && TestNativeRenderAPI2.testGetBackGroundLayer(handler);
+    }
+    public boolean testGetAllLayer(){
+        return handler != 0 && TestNativeRenderAPI2.testGetAllLayer(handler);
+    }
 
 
 
