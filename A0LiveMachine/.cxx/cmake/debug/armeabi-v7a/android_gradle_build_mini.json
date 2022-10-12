@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "G:\\lansong\\LanSongSDK_haoyiyuan_demo(20221009v1)\\A0LiveMachine\\CMakeLists.txt",
+    "C:\\Users\\liubingmei\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\build\\cmake\\android.toolchain.cmake",
+    "C:\\Users\\liubingmei\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\build\\cmake\\platforms.cmake"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\liubingmei\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"G:\\lansong\\LanSongSDK_haoyiyuan_demo(20221009v1)\\A0LiveMachine\\.cxx\\cmake\\debug\\armeabi-v7a\" clean"
+  ],
+  "buildTargetsCommand": "C:\\Users\\liubingmei\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"G:\\lansong\\LanSongSDK_haoyiyuan_demo(20221009v1)\\A0LiveMachine\\.cxx\\cmake\\debug\\armeabi-v7a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "DemoNative-Debug-armeabi-v7a": {
+      "artifactName": "DemoNative",
+      "buildCommand": "C:\\Users\\liubingmei\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"G:\\lansong\\LanSongSDK_haoyiyuan_demo(20221009v1)\\A0LiveMachine\\.cxx\\cmake\\debug\\armeabi-v7a\" DemoNative",
+      "abi": "armeabi-v7a",
+      "output": "G:\\lansong\\LanSongSDK_haoyiyuan_demo(20221009v1)\\A0LiveMachine\\build\\intermediates\\cmake\\debug\\obj\\armeabi-v7a\\libDemoNative.so",
+      "runtimeFiles": []
+    }
+  }
+}

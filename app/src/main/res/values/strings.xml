@@ -1,0 +1,5 @@
+<resources>
+
+    <string name="app_name">郭志军测试</string>
+    <string name="sdk_version"> SDK版本</string>
+</resources>

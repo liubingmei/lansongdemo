@@ -1,0 +1,7 @@
+Executable : C:\Users\liubingmei\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
+arguments : 
+-C
+G:\lansong\LanSongSDK_haoyiyuan_demo(20221009v1)\A0LiveMachine\.cxx\cmake\debug\arm64-v8a
+DemoNative
+jvmArgs : 
+

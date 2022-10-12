@@ -1,0 +1,23 @@
+                Executable : C:\Users\liubingmei\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe
+arguments : 
+-HG:\lansong\LanSongSDK_haoyiyuan_demo(20221009v1)\A0LiveMachine
+-DCMAKE_CXX_FLAGS=-std=c++11 -frtti -fexceptions -Werror=implicit-function-declaration -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=return-type -Werror=shadow -Werror=return-stack-address -Werror=uninitialized -Werror=format -Werror=sign-compare -Werror=int-conversion -O3
+-DCMAKE_C_FLAGS=-Werror=implicit-function-declaration -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=return-type -Werror=shadow -Werror=return-stack-address -Werror=uninitialized -Werror=format -Werror=sign-compare -Werror=int-conversion -O3
+-DCMAKE_FIND_ROOT_PATH=G:\lansong\LanSongSDK_haoyiyuan_demo(20221009v1)\A0LiveMachine\.cxx\cmake\debug\prefab\arm64-v8a\prefab
+-DCMAKE_BUILD_TYPE=Debug
+-DCMAKE_TOOLCHAIN_FILE=C:\Users\liubingmei\AppData\Local\Android\Sdk\ndk\21.1.6352462\build\cmake\android.toolchain.cmake
+-DANDROID_ABI=arm64-v8a
+-DANDROID_NDK=C:\Users\liubingmei\AppData\Local\Android\Sdk\ndk\21.1.6352462
+-DANDROID_PLATFORM=android-23
+-DCMAKE_ANDROID_ARCH_ABI=arm64-v8a
+-DCMAKE_ANDROID_NDK=C:\Users\liubingmei\AppData\Local\Android\Sdk\ndk\21.1.6352462
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=G:\lansong\LanSongSDK_haoyiyuan_demo(20221009v1)\A0LiveMachine\build\intermediates\cmake\debug\obj\arm64-v8a
+-DCMAKE_MAKE_PROGRAM=C:\Users\liubingmei\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_SYSTEM_VERSION=23
+-BG:\lansong\LanSongSDK_haoyiyuan_demo(20221009v1)\A0LiveMachine\.cxx\cmake\debug\arm64-v8a
+-GNinja
+jvmArgs : 
+
+Build command args:

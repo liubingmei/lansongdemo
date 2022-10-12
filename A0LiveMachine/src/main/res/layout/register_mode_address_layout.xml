@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/darker_gray">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="使用:\n 1.确定USER_ID是正确的.\n 2.把txt文件放到此工程的assets下, 代码里指定文件名,运行.(一行放一个mac地址.)"/>
+    <TextView
+        android:id="@+id/id_register_id_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="100dp"
+        android:text="ID:13146798131313"
+        android:textSize="20dp"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <Button
+        android:id="@+id/id_hard_ware_register_btn"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="40dp"
+        android:background="@android:color/holo_red_light"
+        android:text="开始注册设备"
+        android:textSize="30dp" />
+
+
+    <TextView
+        android:id="@+id/id_register_result_hint"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="40dp"
+        android:text="当前状态:"
+        android:textColor="#0000FF"
+        android:textSize="20dp"/>
+
+
+</LinearLayout>

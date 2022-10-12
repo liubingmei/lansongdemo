@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <SurfaceView
+        android:id="@+id/sv_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:layout_width="@dimen/dp_200"
+        android:layout_height="@dimen/dp_320"
+        android:orientation="vertical"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@color/blue90">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red"
+            android:text="输出图像预览"/>
+
+        <ImageView
+            android:id="@+id/id_native_cpp_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/id_live_run_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_20"
+        android:text="运行"
+        android:lines="10"
+        android:background="@color/green"/>
+
+
+
+</RelativeLayout>

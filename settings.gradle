@@ -1,0 +1,6 @@
+include ':app'
+rootProject.name='Gzj_ALL'
+include ':LanSongSDK'
+include ':A0LiveMachine'
+
+

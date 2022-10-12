@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Gzj_ALL.iml" filepath="$PROJECT_DIR$/.idea/modules/Gzj_ALL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/A0LiveMachine/Gzj_ALL.A0LiveMachine.iml" filepath="$PROJECT_DIR$/.idea/modules/A0LiveMachine/Gzj_ALL.A0LiveMachine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/A0LiveMachine/Gzj_ALL.A0LiveMachine.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/A0LiveMachine/Gzj_ALL.A0LiveMachine.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/A0LiveMachine/Gzj_ALL.A0LiveMachine.main.iml" filepath="$PROJECT_DIR$/.idea/modules/A0LiveMachine/Gzj_ALL.A0LiveMachine.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/A0LiveMachine/Gzj_ALL.A0LiveMachine.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/A0LiveMachine/Gzj_ALL.A0LiveMachine.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LanSongSDK/Gzj_ALL.LanSongSDK.iml" filepath="$PROJECT_DIR$/.idea/modules/LanSongSDK/Gzj_ALL.LanSongSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LanSongSDK/Gzj_ALL.LanSongSDK.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/LanSongSDK/Gzj_ALL.LanSongSDK.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LanSongSDK/Gzj_ALL.LanSongSDK.main.iml" filepath="$PROJECT_DIR$/.idea/modules/LanSongSDK/Gzj_ALL.LanSongSDK.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LanSongSDK/Gzj_ALL.LanSongSDK.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/LanSongSDK/Gzj_ALL.LanSongSDK.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Gzj_ALL.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Gzj_ALL.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Gzj_ALL.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Gzj_ALL.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Gzj_ALL.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Gzj_ALL.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Gzj_ALL.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Gzj_ALL.app.unitTest.iml" />
+    </modules>
+  </component>
+</project>

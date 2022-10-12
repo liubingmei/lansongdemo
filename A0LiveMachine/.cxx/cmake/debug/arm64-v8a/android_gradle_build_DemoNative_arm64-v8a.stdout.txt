@@ -1,0 +1,9 @@
+ninja: Entering directory `G:\lansong\LanSongSDK_haoyiyuan_demo(20221009v1)\A0LiveMachine\.cxx\cmake\debug\arm64-v8a'
+[1/2] Building CXX object CMakeFiles/DemoNative.dir/src/main/cpp/TestRender.cpp.o
+clang++: warning: argument unused during compilation: '-s' [-Wunused-command-line-argument]
+In file included from ../../../../src/main/cpp/TestRender.cpp:9:
+../../../../src/main/cpp/../../../../LanSongSDK/src/main/cpp/sdk_header/ZSRender.h:22:9: warning: expected #pragma pack parameter to be '1', '2', '4', '8', or '16' [-Wignored-pragmas]
+#pragma pack(32)//设定为32字节对齐
+        ^
+1 warning generated.
+[2/2] Linking CXX shared library ..\..\..\..\build\intermediates\cmake\debug\obj\arm64-v8a\libDemoNative.so

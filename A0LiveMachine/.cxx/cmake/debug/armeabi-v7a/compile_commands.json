@@ -1,0 +1,7 @@
+[
+{
+  "directory": "G:/lansong/LanSongSDK_haoyiyuan_demo(20221009v1)/A0LiveMachine/.cxx/cmake/debug/armeabi-v7a",
+  "command": "C:\\Users\\liubingmei\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi23 --gcc-toolchain=C:/Users/liubingmei/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/liubingmei/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -DDemoNative_EXPORTS -I../../../../src/main/cpp/include -I../../../../../LanSongSDK/src/main/cpp/sdk_header  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -std=c++11 -frtti -fexceptions -Werror=implicit-function-declaration -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=return-type -Werror=shadow -Werror=return-stack-address -Werror=uninitialized -Werror=format -Werror=sign-compare -Werror=int-conversion -O3 -Oz -DNDEBUG  -s -fPIC   -o CMakeFiles\\DemoNative.dir\\src\\main\\cpp\\TestRender.cpp.o -c G:\\lansong\\LanSongSDK_haoyiyuan_demo(20221009v1)\\A0LiveMachine\\src\\main\\cpp\\TestRender.cpp",
+  "file": "G:/lansong/LanSongSDK_haoyiyuan_demo(20221009v1)/A0LiveMachine/src/main/cpp/TestRender.cpp"
+}
+]

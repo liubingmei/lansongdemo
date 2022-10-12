@@ -1,0 +1,48 @@
+{
+  "stringTable": {
+    "0": "G:/lansong/LanSongSDK_haoyiyuan_demo(20221009v1)/A0LiveMachine/.cxx/cmake/debug/armeabi-v7a",
+    "1": "--target=armv7-none-linux-androideabi23 --gcc-toolchain=C:/Users/liubingmei/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/liubingmei/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot -DDemoNative_EXPORTS -I../../../../src/main/cpp/include -I../../../../../LanSongSDK/src/main/cpp/sdk_header -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -std=c++11 -frtti -fexceptions -Werror=implicit-function-declaration -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=return-type -Werror=shadow -Werror=return-stack-address -Werror=uninitialized -Werror=format -Werror=sign-compare -Werror=int-conversion -O3 -Oz -DNDEBUG -s -fPIC"
+  },
+  "buildFiles": [
+    "G:\\lansong\\LanSongSDK_haoyiyuan_demo(20221009v1)\\A0LiveMachine\\CMakeLists.txt",
+    "C:\\Users\\liubingmei\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\build\\cmake\\android.toolchain.cmake",
+    "C:\\Users\\liubingmei\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\build\\cmake\\platforms.cmake"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\liubingmei\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"G:\\lansong\\LanSongSDK_haoyiyuan_demo(20221009v1)\\A0LiveMachine\\.cxx\\cmake\\debug\\armeabi-v7a\" clean"
+  ],
+  "buildTargetsCommand": "C:\\Users\\liubingmei\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"G:\\lansong\\LanSongSDK_haoyiyuan_demo(20221009v1)\\A0LiveMachine\\.cxx\\cmake\\debug\\armeabi-v7a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "DemoNative-Debug-armeabi-v7a": {
+      "buildCommand": "C:\\Users\\liubingmei\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"G:\\lansong\\LanSongSDK_haoyiyuan_demo(20221009v1)\\A0LiveMachine\\.cxx\\cmake\\debug\\armeabi-v7a\" DemoNative",
+      "buildType": "debug",
+      "toolchain": "2909757869",
+      "abi": "armeabi-v7a",
+      "artifactName": "DemoNative",
+      "files": [
+        {
+          "src": "G:\\lansong\\LanSongSDK_haoyiyuan_demo(20221009v1)\\A0LiveMachine\\src\\main\\cpp\\TestRender.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [
+        {
+          "header": "G:\\lansong\\LanSongSDK_haoyiyuan_demo(20221009v1)\\A0LiveMachine\\src\\main\\cpp\\TestRender.h",
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "output": "G:\\lansong\\LanSongSDK_haoyiyuan_demo(20221009v1)\\A0LiveMachine\\build\\intermediates\\cmake\\debug\\obj\\armeabi-v7a\\libDemoNative.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "2909757869": {
+      "cppCompilerExecutable": "C:\\Users\\liubingmei\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

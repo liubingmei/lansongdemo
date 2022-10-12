@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lansong.a0live">
+
+    <application>
+        <activity android:name="com.lansong.liveMachine.LiveMachineHintActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.lansong.liveMachine.MattingAPIDemo.LiveMachineAPIDemoActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.lansong.liveMachine.LiveMachine.LiveMachineDemoActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.lansong.liveMachine.camera2video.LiveMachineCamera2DemoActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.lansong.liveMachine.MR.MRMattingDemoActivity" />
+        <activity android:name="com.lansong.liveMachine.LiveMachine.RegisterMoreAddressActivity" />
+        <activity android:name="com.lansong.testNative.TestNativeRenderActivity" />
+        <activity android:name="com.lansong.testNative.LSOGreenMattingRgbaAPIDemoActivity" />
+        <activity android:name="com.lansong.liveMachine.LiveMachine.BaoLianLiveMachineActivity" />
+    </application>
+</manifest>
