@@ -33,25 +33,33 @@ public class TestNativeRenderAPI2 {
 
 
 
-    public native static boolean testAddLayer(long handle, int width,int height,byte[] rgba);
+    public native static boolean testAddRgbaLayer(long handle, int width,int height,byte[] rgba);
 
     public native static boolean testAddLayerWithNv21(long handle, int width,int height,int rotate,byte[] rgba);
+
+    // 添加图层，返回图层对象
+    public native static long addRgbaLayer(long handle, int width,int height,byte[] rgba);
+    public native static long addLayerWithNv21(long handle, int width,int height,int rotate,byte[] rgba);
 
 
     // 删除图层
     public native static boolean testRemoveMattingLayer(long handle);
     public native static boolean testRemoveBackGroundLayer(long handle);
 
+    public native static boolean removeLayer(long handle, long layerId);
 
     // 获取图层
     public native static boolean testGetMattingLayer(long handle);
     public native static boolean testGetBackGroundLayer(long handle);
 
+    public native static long getMattingLayer(long handle);
+    public native static long getBackGroundLayer(long handle);
+
     public native static boolean testGetAllLayer(long handle);
 
 
     // 设置图层对象位置
-    public native static boolean testSetMattingLayerPosition(long handle, int position);
+    public native static boolean testSetLayerPosition(long handle, long layer,int position);
 
     public native static float getMattingOneFrameOnRGBATimeMS();
 

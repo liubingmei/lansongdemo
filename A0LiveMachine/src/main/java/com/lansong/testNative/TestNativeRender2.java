@@ -9,6 +9,7 @@ package com.lansong.testNative;
 public class TestNativeRender2 {
 
     private long handler;
+    private long layer;
 
     public static final int GREEN_MATTING = 0;
     public static final int BLUE_MATTING = 1;
@@ -98,14 +99,24 @@ public class TestNativeRender2 {
     }
 
 
-    public boolean testAddLayer(int width,int height,byte[] rgba)
+    public boolean testAddRgbaLayer(int width,int height,byte[] rgba)
     {
-        return handler!=0 && TestNativeRenderAPI2.testAddLayer(handler,width,height,rgba);
+        return handler!=0 && TestNativeRenderAPI2.testAddRgbaLayer(handler,width,height,rgba);
     }
     public boolean testAddLayerWithNv21 (int width,int height,int rotate,byte[] rgba)
     {
         return handler!=0 && TestNativeRenderAPI2.testAddLayerWithNv21(handler,width,height,rotate,rgba);
     }
+
+    public long addRgbaLayer(int width,int height,byte[] rgba){
+        layer= TestNativeRenderAPI2.addRgbaLayer(handler,width,height,rgba);
+        return layer;
+    }
+    public long addLayerWithNv21 (int width,int height,int rotate,byte[] rgba){
+        layer= TestNativeRenderAPI2.addLayerWithNv21(handler,width,height,rotate,rgba);
+        return layer;
+    }
+
 
     // 删除图层
     public boolean testRemoveMattingLayer()
@@ -120,6 +131,24 @@ public class TestNativeRender2 {
     public boolean testGetMattingLayer(){
         return handler!=0 && TestNativeRenderAPI2.testGetMattingLayer(handler);
     }
+
+    // 获取图层
+    public long getMattingLayer(){
+        layer=  TestNativeRenderAPI2.getMattingLayer(handler);
+        return layer;
+    }
+    public long getBackGroundLayer(){
+        layer=  TestNativeRenderAPI2.getBackGroundLayer(handler);
+        System.out.println("getBackGroundLayer layer="+layer);
+        return layer;
+    }
+
+    //删除图层对象
+    public boolean removeLayer(long layer){
+        return handler!=0 && TestNativeRenderAPI2.removeLayer(handler,layer);
+    }
+
+
     public boolean testGetBackGroundLayer(){
         return handler!=0 && TestNativeRenderAPI2.testGetBackGroundLayer(handler);
     }
@@ -127,6 +156,9 @@ public class TestNativeRender2 {
         return handler != 0 && TestNativeRenderAPI2.testGetAllLayer(handler);
     }
 
+    public boolean testSetLayerPosition(long layer,int position){
+        return handler != 0 && TestNativeRenderAPI2.testSetLayerPosition(handler,layer,position);
+    }
 
 
 

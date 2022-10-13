@@ -18,9 +18,8 @@
 //   (unsigned char *)env->GetPrimitiveArrayCritical(bytes,0)
 
 //第一个参数是java传递来的;
-#define UNLOCK_ARRAY_TO_JVM(bytes,srcBuf) \
+#define UNLOCK_ARRAY_TO_JVM(bytes, srcBuf) \
        env->ReleaseByteArrayElements(bytes,( jbyte*)srcBuf,0);
-
 
 
 char *jstring2string(JNIEnv *env, jstring jstr) {
@@ -41,14 +40,13 @@ char *jstring2string(JNIEnv *env, jstring jstr) {
 }
 
 
-
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_setGreenMattingType(JNIEnv *env, jclass clazz,
-                                                                    jlong handle, jint type) {
+                                                                     jlong handle, jint type) {
 
     ZSRender *render = (ZSRender *) handle;
-    if(render!= nullptr ){
+    if (render != nullptr) {
         render->getGreenMatting()->setGreenMattingType(type);
     }
 }
@@ -56,11 +54,10 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_setGreenMattingType(JNIEnv *env
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_setMattingLevel(JNIEnv *env, jclass clazz,
-                                                                jlong handle, jint level) {
-
+                                                                 jlong handle, jint level) {
 
     ZSRender *render = (ZSRender *) handle;
-    if(render!= nullptr ){
+    if (render != nullptr) {
         render->getGreenMatting()->setMattingLevel(level);
     }
 }
@@ -69,11 +66,11 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_setMattingLevel(JNIEnv *env, jc
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_setGreenMinThreshold(JNIEnv *env, jclass clazz,
-                                                                     jlong handle,
-                                                                     jfloat min) {
+                                                                      jlong handle,
+                                                                      jfloat min) {
 
     ZSRender *render = (ZSRender *) handle;
-    if(render!= nullptr ){
+    if (render != nullptr) {
         render->getGreenMatting()->setGreenMinThreshold(min);
     }
 
@@ -81,11 +78,11 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_setGreenMinThreshold(JNIEnv *en
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_setGreenMaxThreshold(JNIEnv *env, jclass clazz,
-                                                                     jlong handle,
-                                                                     jfloat max) {
+                                                                      jlong handle,
+                                                                      jfloat max) {
 
     ZSRender *render = (ZSRender *) handle;
-    if(render!= nullptr ){
+    if (render != nullptr) {
         render->getGreenMatting()->setGreenMaxThreshold(max);
     }
 }
@@ -93,33 +90,33 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_setGreenMaxThreshold(JNIEnv *en
 extern "C"
 JNIEXPORT jfloat JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_getGreenMaxThreshold(JNIEnv *env, jclass clazz,
-                                                                     jlong handle) {
+                                                                      jlong handle) {
     ZSRender *render = (ZSRender *) handle;
-    if(render!= nullptr ){
+    if (render != nullptr) {
         return render->getGreenMatting()->getGreenMaxThreshold();
-    }else{
+    } else {
         return 0.0;
     }
 }
 extern "C"
 JNIEXPORT jfloat JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_getGreenMinThreshold(JNIEnv *env, jclass clazz,
-                                                                     jlong handle) {
+                                                                      jlong handle) {
 
     ZSRender *render = (ZSRender *) handle;
-    if(render!= nullptr ){
+    if (render != nullptr) {
         return render->getGreenMatting()->getGreenMinThreshold();
-    }else{
+    } else {
         return 0.0;
     }
 }
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_setBlueMinThreshold(JNIEnv *env, jclass clazz,
-                                                                    jlong handle,
-                                                                    jfloat value) {
+                                                                     jlong handle,
+                                                                     jfloat value) {
     ZSRender *render = (ZSRender *) handle;
-    if(render!= nullptr ){
+    if (render != nullptr) {
         render->getGreenMatting()->setBlueMinThreshold(value);
     }
 
@@ -127,13 +124,13 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_setBlueMinThreshold(JNIEnv *env
 extern "C"
 JNIEXPORT jfloat JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_getBlueMinThreshold(JNIEnv *env, jclass clazz,
-                                                                    jlong handle) {
+                                                                     jlong handle) {
 
 
     ZSRender *render = (ZSRender *) handle;
-    if(render!= nullptr ){
+    if (render != nullptr) {
         return render->getGreenMatting()->getBlueMinThreshold();
-    }else{
+    } else {
         return 0.0;
     }
 
@@ -141,11 +138,11 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_getBlueMinThreshold(JNIEnv *env
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_setBlueMaxThreshold(JNIEnv *env, jclass clazz,
-                                                                    jlong handle,
-                                                                    jfloat value) {
+                                                                     jlong handle,
+                                                                     jfloat value) {
 
     ZSRender *render = (ZSRender *) handle;
-    if(render!= nullptr ){
+    if (render != nullptr) {
         render->getGreenMatting()->setBlueMaxThreshold(value);
     }
 
@@ -154,24 +151,24 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_setBlueMaxThreshold(JNIEnv *env
 extern "C"
 JNIEXPORT jfloat JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_getBlueMaxThreshold(JNIEnv *env, jclass clazz,
-                                                                    jlong handle) {
+                                                                     jlong handle) {
 
 
     ZSRender *render = (ZSRender *) handle;
-    if(render!= nullptr ){
+    if (render != nullptr) {
         return render->getGreenMatting()->getBlueMaxThreshold();
-    }else{
+    } else {
         return 0.0;
     }
 }
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_setRedMinThreshold(JNIEnv *env, jclass clazz,
-                                                                   jlong handle,
-                                                                   jfloat value) {
+                                                                    jlong handle,
+                                                                    jfloat value) {
 
     ZSRender *render = (ZSRender *) handle;
-    if(render!= nullptr ){
+    if (render != nullptr) {
         render->getGreenMatting()->setRedMinThreshold(value);
     }
 
@@ -179,11 +176,11 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_setRedMinThreshold(JNIEnv *env,
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_setRedMaxThreshold(JNIEnv *env, jclass clazz,
-                                                                   jlong handle,
-                                                                   jfloat value) {
+                                                                    jlong handle,
+                                                                    jfloat value) {
 
     ZSRender *render = (ZSRender *) handle;
-    if(render!= nullptr ){
+    if (render != nullptr) {
         render->getGreenMatting()->setRedMaxThreshold(value);
     }
 
@@ -191,25 +188,25 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_setRedMaxThreshold(JNIEnv *env,
 extern "C"
 JNIEXPORT jfloat JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_getRedMinThreshold(JNIEnv *env, jclass clazz,
-                                                                   jlong handle) {
+                                                                    jlong handle) {
 
 
     ZSRender *render = (ZSRender *) handle;
-    if(render!= nullptr ){
+    if (render != nullptr) {
         return render->getGreenMatting()->getRedMinThreshold();
-    }else{
+    } else {
         return 0;
     }
 }
 extern "C"
 JNIEXPORT jfloat JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_getRedMaxThreshold(JNIEnv *env, jclass clazz,
-                                                                   jlong handle) {
+                                                                    jlong handle) {
 
     ZSRender *render = (ZSRender *) handle;
-    if(render!= nullptr ){
+    if (render != nullptr) {
         return render->getGreenMatting()->getRedMaxThreshold();
-    }else{
+    } else {
         return 0;
     }
 }
@@ -222,21 +219,19 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_getRedMaxThreshold(JNIEnv *env,
 extern "C"
 JNIEXPORT jlong JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_initRender(JNIEnv *env, jclass clazz,
-                                                           jstring path1, jstring path2,
-                                                           jstring path3,
-                                                           int width, int height) {
+                                                            jstring path1, jstring path2,
+                                                            jstring path3,
+                                                            int width, int height) {
     char *modelPath1 = jstring2string(env, path1);
     char *modelPath2 = jstring2string(env, path2);
     char *modelPath3 = jstring2string(env, path3);
 
 
-
-
-    ZSRender *render=new ZSRender(modelPath1,
-                                  modelPath2,
-                                  modelPath3);
-    render->initWithCompSize(width,height);
-    return (long)render;
+    ZSRender *render = new ZSRender(modelPath1,
+                                    modelPath2,
+                                    modelPath3);
+    render->initWithCompSize(width, height);
+    return (long) render;
 
 }
 
@@ -245,15 +240,16 @@ float lansongSDK_matting_timeMs = 0;
 extern "C"
 JNIEXPORT jboolean JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_mattingOneFrameOnRGBA(JNIEnv *env, jclass clazz,
-                                                                      jlong handle, jint width,
-                                                                      jint height,jint rotate, jbyteArray rgba_src,
-                                                                      jbyteArray rgba_dst) {
+                                                                       jlong handle, jint width,
+                                                                       jint height, jint rotate,
+                                                                       jbyteArray rgba_src,
+                                                                       jbyteArray rgba_dst) {
 
     unsigned char *srcBuf = (unsigned char *) LOCK_ARRAY_FROM_JVM(rgba_src);
     unsigned char *dstBuf = (unsigned char *) LOCK_ARRAY_FROM_JVM(rgba_dst);
 
 
-    bool  ret= false;
+    bool ret = false;
 
 
     struct timeval start1;
@@ -261,19 +257,20 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_mattingOneFrameOnRGBA(JNIEnv *e
 
     gettimeofday(&start1, NULL);
 
-    void *ptr= nullptr;
+    void *ptr = nullptr;
 
     ZSRender *matting = (ZSRender *) handle;
     if (matting != nullptr) {
-        ptr= matting->mattingOneFrameWithRgba(width,height,rotate,srcBuf);
+        ptr = matting->mattingOneFrameWithRgba(width, height, rotate, srcBuf);
     }
 
     gettimeofday(&end1, NULL); \
-    lansongSDK_matting_timeMs = (end1.tv_sec - start1.tv_sec) * 1000 + (end1.tv_usec - start1.tv_usec) / 1000; \
+    lansongSDK_matting_timeMs = (end1.tv_sec - start1.tv_sec) * 1000 +
+                                (end1.tv_usec - start1.tv_usec) / 1000; \
 
-    if(ptr!= nullptr){
-        memcpy(dstBuf,ptr,width*height*4);
-        ret= true;
+    if (ptr != nullptr) {
+        memcpy(dstBuf, ptr, width * height * 4);
+        ret = true;
     }
 
     UNLOCK_ARRAY_TO_JVM(rgba_dst, dstBuf);
@@ -287,15 +284,15 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_mattingOneFrameOnRGBA(JNIEnv *e
 extern "C"
 JNIEXPORT jboolean JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_mattingOneFrameWithNv21(JNIEnv *env, jclass clazz,
-                                                                        jlong handle, jint width,
-                                                                        jint height,jint rotate, jbyteArray nv21_bytes,
-                                                                        jbyteArray rgba_dst) {
+                                                                         jlong handle, jint width,
+                                                                         jint height, jint rotate,
+                                                                         jbyteArray nv21_bytes,
+                                                                         jbyteArray rgba_dst) {
 
     unsigned char *nv21Buf = (unsigned char *) LOCK_ARRAY_FROM_JVM(nv21_bytes);
-    unsigned char *dstBuf = (unsigned char *)LOCK_ARRAY_FROM_JVM(rgba_dst);
+    unsigned char *dstBuf = (unsigned char *) LOCK_ARRAY_FROM_JVM(rgba_dst);
 
-    bool  ret= false;
-
+    bool ret = false;
 
 
     struct timeval start1;
@@ -303,21 +300,22 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_mattingOneFrameWithNv21(JNIEnv 
 
     gettimeofday(&start1, NULL);
 
-    void *ptr= nullptr;
+    void *ptr = nullptr;
 
     ZSRender *pRender = (ZSRender *) handle;
 
     if (pRender != nullptr) {
-        ptr= pRender->mattingOneFrameWithNv21(width, height, rotate, nv21Buf);
+        ptr = pRender->mattingOneFrameWithNv21(width, height, rotate, nv21Buf);
     }
 
 
     gettimeofday(&end1, NULL); \
-    lansongSDK_matting_timeMs = (end1.tv_sec - start1.tv_sec) * 1000 + (end1.tv_usec - start1.tv_usec) / 1000; \
+    lansongSDK_matting_timeMs = (end1.tv_sec - start1.tv_sec) * 1000 +
+                                (end1.tv_usec - start1.tv_usec) / 1000; \
 
-    if(ptr!= nullptr){
-        memcpy(dstBuf,ptr,width*height*4);
-        ret= true;
+    if (ptr != nullptr) {
+        memcpy(dstBuf, ptr, width * height * 4);
+        ret = true;
     }
 
     UNLOCK_ARRAY_TO_JVM(rgba_dst, dstBuf);
@@ -329,7 +327,8 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_mattingOneFrameWithNv21(JNIEnv 
 
 extern "C"
 JNIEXPORT jfloat JNICALL
-Java_com_lansong_testNative_TestNativeRenderAPI2_getMattingOneFrameOnRGBATimeMS(JNIEnv *env, jclass clazz) {
+Java_com_lansong_testNative_TestNativeRenderAPI2_getMattingOneFrameOnRGBATimeMS(JNIEnv *env,
+                                                                                jclass clazz) {
     return lansongSDK_matting_timeMs;
 }
 
@@ -337,7 +336,7 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_getMattingOneFrameOnRGBATimeMS(
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_releaseOnRGBA(JNIEnv *env, jclass clazz,
-                                                              jlong handle) {
+                                                               jlong handle) {
 
     ZSRender *pRender = (ZSRender *) handle;
     if (pRender != nullptr) {
@@ -348,14 +347,14 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_releaseOnRGBA(JNIEnv *env, jcla
 extern "C"
 JNIEXPORT jboolean JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_pushBackGroundRGBA(JNIEnv *env, jclass clazz,
-                                                                   jlong handle, jint width,
-                                                                   jint height, jbyteArray rgba) {
+                                                                    jlong handle, jint width,
+                                                                    jint height, jbyteArray rgba) {
     unsigned char *srcBuf = (unsigned char *) LOCK_ARRAY_FROM_JVM(rgba);
 
-    bool  ret= false;
+    bool ret = false;
     ZSRender *matting = (ZSRender *) handle;
     if (matting != nullptr) {
-        ret= matting->setBackGroundRgba(width, height, srcBuf);
+        ret = matting->setBackGroundRgba(width, height, srcBuf);
     }
     UNLOCK_ARRAY_TO_JVM(rgba, srcBuf);
     return ret;
@@ -364,14 +363,15 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_pushBackGroundRGBA(JNIEnv *env,
 extern "C"
 JNIEXPORT jboolean JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_pushBackGroundWithNv21(JNIEnv *env, jclass clazz,
-                                                                       jlong handle, jint width,
-                                                                       jint height,jint rotate, jbyteArray rgba) {
+                                                                        jlong handle, jint width,
+                                                                        jint height, jint rotate,
+                                                                        jbyteArray rgba) {
     unsigned char *srcBuf = (unsigned char *) LOCK_ARRAY_FROM_JVM(rgba);
 
-    bool  ret= false;
+    bool ret = false;
     ZSRender *matting = (ZSRender *) handle;
     if (matting != nullptr) {
-        ret= matting->setBackGroundWithNv21(width, height,rotate, srcBuf);
+        ret = matting->setBackGroundWithNv21(width, height, rotate, srcBuf);
     }
     UNLOCK_ARRAY_TO_JVM(rgba, srcBuf);
     return ret;
@@ -381,88 +381,140 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_pushBackGroundWithNv21(JNIEnv *
 
 extern "C"
 JNIEXPORT jfloat JNICALL
-Java_com_lansong_testNative_TestNativeRenderAPI2_getGLDrawOneFrameTimeMS(JNIEnv *env, jclass clazz,long handle) {
+Java_com_lansong_testNative_TestNativeRenderAPI2_getGLDrawOneFrameTimeMS(JNIEnv *env, jclass clazz,
+                                                                         long handle) {
     ZSRender *matting = (ZSRender *) handle;
-    if(matting!= nullptr){
+    if (matting != nullptr) {
         return matting->getOpenGLOneFrameTime();
-    }else{
+    } else {
         return 0.0;
     }
 }
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_com_lansong_testNative_TestNativeRenderAPI2_testAddLayer(JNIEnv *env, jclass clazz,
-                                                             jlong handle, jint width, jint height,
-                                                             jbyteArray rgba) {
-
-
-
-
+Java_com_lansong_testNative_TestNativeRenderAPI2_testAddRgbaLayer(JNIEnv *env, jclass clazz,
+                                                                  jlong handle, jint width,
+                                                                  jint height,
+                                                                  jbyteArray rgba) {
     ZSRender *pRender = (ZSRender *) handle;
-    if(pRender != nullptr){
-        ZSLayer *layer=pRender->addRgbaLayer(width, height);
-        if(layer!= nullptr){
-            layer->setScaledValue(540,540);
+    if (pRender != nullptr) {
+        ZSLayer *layer = pRender->addRgbaLayer(width, height);
+        if (layer != nullptr) {
+            layer->setScaledValue(540, 540);
             layer->setPosition(LEFT_TOP);
 
-            unsigned  char *src_buf= LOCK_ARRAY_FROM_JVM(rgba);
+            unsigned char *src_buf = LOCK_ARRAY_FROM_JVM(rgba);
             layer->pushRgbaDataFromOut(src_buf);
-            UNLOCK_ARRAY_TO_JVM(rgba,src_buf);
+            UNLOCK_ARRAY_TO_JVM(rgba, src_buf);
         }
         return true;
-    }else{
+    } else {
         return false;
     }
 }
+
+
 extern "C"
 JNIEXPORT jboolean JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_testAddLayerWithNv21(JNIEnv *env, jclass clazz,
                                                                       jlong handle, jint width,
-                                                                      jint height,jint rotate, jbyteArray nv21) {
+                                                                      jint height, jint rotate,
+                                                                      jbyteArray nv21) {
     ZSRender *pRender = (ZSRender *) handle;
-    if(pRender != nullptr){
-        ZSLayer *layer=pRender->addNv21Layer(width, height,rotate);
-        if(layer!= nullptr){
-            layer->setScaledValue(540,540); //设置缩放值
-            layer->setPosition(LEFT_TOP); //设置位置
-            layer ->setName((int8_t *) "nv21"); //设置一个名字, 用于调试.
+    if (pRender != nullptr) {
+        ZSLayer *layer = pRender->addNv21Layer(width, height, rotate);
+        if (layer != nullptr) {
+            layer->setScaledValue(540, 540); //设置缩放值
+            layer->setPosition(LEFT_BOTTOM); //设置位置
+            layer->setName((int8_t *) "nv21"); //设置一个名字, 用于调试.
             layer->setRotation(90); // 旋转90度
             layer->setScaleType(ORIGINAL); //缩放 原始大小
-            unsigned  char *src_buf= LOCK_ARRAY_FROM_JVM(nv21);
+            unsigned char *src_buf = LOCK_ARRAY_FROM_JVM(nv21);
             layer->pushNv21DataFromOut(src_buf);
-            UNLOCK_ARRAY_TO_JVM(nv21,src_buf);
+            UNLOCK_ARRAY_TO_JVM(nv21, src_buf);
         }
         return true;
-    }else{
+    } else {
         return false;
     }
 }
+
+
+extern "C"
+JNIEXPORT jlong JNICALL
+Java_com_lansong_testNative_TestNativeRenderAPI2_addRgbaLayer(JNIEnv *env, jclass clazz,
+                                                              jlong handle, jint width, jint height,
+                                                              jbyteArray rgba) {
+    ZSRender *pRender = (ZSRender *) handle;
+    if (pRender != nullptr) {
+        ZSLayer *layer = pRender->addRgbaLayer(width, height);
+        if (layer != nullptr) {
+            layer->setScaledValue(540, 540);
+            layer->setPosition(LEFT_TOP);
+
+            unsigned char *src_buf = LOCK_ARRAY_FROM_JVM(rgba);
+            layer->pushRgbaDataFromOut(src_buf);
+            UNLOCK_ARRAY_TO_JVM(rgba, src_buf);
+        }
+        return (jlong) layer;
+    } else {
+        return 0;
+    }
+}
+
+extern "C"
+JNIEXPORT jlong JNICALL
+Java_com_lansong_testNative_TestNativeRenderAPI2_addLayerWithNv21(JNIEnv *env, jclass clazz,
+                                                                  jlong handle, jint width,
+                                                                  jint height, jint rotate,
+                                                                  jbyteArray rgba) {
+    ZSRender *pRender = (ZSRender *) handle;
+    if (pRender != nullptr) {
+        ZSLayer *layer = pRender->addNv21Layer(width, height, rotate);
+        if (layer != nullptr) {
+            layer->setScaledValue(540, 540); //设置缩放值
+            layer->setPosition(LEFT_BOTTOM); //设置位置
+            layer->setName((int8_t *) "nv21"); //设置一个名字, 用于调试.
+            layer->setRotation(90); // 旋转90度
+            layer->setScaleType(ORIGINAL); //缩放 原始大小
+            unsigned char *src_buf = LOCK_ARRAY_FROM_JVM(nv21);
+            layer->pushNv21DataFromOut(src_buf);
+            UNLOCK_ARRAY_TO_JVM(nv21, src_buf);
+        }
+        return (long)layer;
+    } else {
+        return 0;
+    }
+}
+
+
+
+
 
 extern "C"
 JNIEXPORT jboolean JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_testRemoveMattingLayer(JNIEnv *env, jclass clazz,
                                                                         jlong handle) {
     ZSRender *pRender = (ZSRender *) handle;
-    if(pRender != nullptr){
-        ZSLayer *layer =pRender->getMattingLayer();
-        pRender-> removeLayer(layer);
+    if (pRender != nullptr) {
+        ZSLayer *layer = pRender->getMattingLayer();
+        pRender->removeLayer(layer);
         return true;
-    }
-    else{
+    } else {
         return false;
     }
 }
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_com_lansong_testNative_TestNativeRenderAPI2_testRemoveBackGroundLayer(JNIEnv *env, jclass clazz,
+Java_com_lansong_testNative_TestNativeRenderAPI2_testRemoveBackGroundLayer(JNIEnv *env,
+                                                                           jclass clazz,
                                                                            jlong handle) {
     ZSRender *pRender = (ZSRender *) handle;
-    if(pRender != nullptr){
-        ZSLayer *layer =pRender->getBackGroundLayer();
-        pRender-> removeLayer(layer);
+    if (pRender != nullptr) {
+        ZSLayer *layer = pRender->getBackGroundLayer();
+        pRender->removeLayer(layer);
         return true;
-    }
-    else{
+    } else {
         return false;
     }
 }
@@ -474,19 +526,20 @@ JNIEXPORT jboolean JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_testGetMattingLayer(JNIEnv *env, jclass clazz,
                                                                      jlong handle) {
     ZSRender *pRender = (ZSRender *) handle;
-    if(pRender != nullptr){
-        ZSLayer *layer =pRender->getMattingLayer();
-        if(layer!= nullptr){
+    if (pRender != nullptr) {
+        ZSLayer *layer = pRender->getMattingLayer();
+        if (layer != nullptr) {
 
             return true;
-        }else{
+        } else {
             return false;
         }
-    }
-    else{
+    } else {
         return false;
     }
 }
+
+
 
 
 extern "C"
@@ -494,15 +547,14 @@ JNIEXPORT jboolean JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_testGetBackGroundLayer(JNIEnv *env, jclass clazz,
                                                                         jlong handle) {
     ZSRender *pRender = (ZSRender *) handle;
-    if(pRender != nullptr){
-        ZSLayer *layer =pRender->getBackGroundLayer();
-        if(layer!= nullptr){
+    if (pRender != nullptr) {
+        ZSLayer *layer = pRender->getBackGroundLayer();
+        if (layer != nullptr) {
             return true;
-        }else{
+        } else {
             return false;
         }
-    }
-    else{
+    } else {
         return false;
     }
 }
@@ -511,53 +563,91 @@ JNIEXPORT jboolean JNICALL
 Java_com_lansong_testNative_TestNativeRenderAPI2_testGetAllLayer(JNIEnv *env, jclass clazz,
                                                                  jlong handle) {
     ZSRender *pRender = (ZSRender *) handle;
-    if(pRender != nullptr){
-        std::list<ZSLayer *> *layers =pRender->getAllLayers();
+    if (pRender != nullptr) {
+        std::list<ZSLayer *> *layers = pRender->getAllLayers();
         // 从layers 遍历所有图层
         for (std::list<ZSLayer *>::iterator it = layers->begin(); it != layers->end(); it++) {
             ZSLayer *layer = *it;
             std::cout << *it;
-            LOGI("layer name=%s",layer->getName());
-            LOGI("layer 容器宽度=%d",layer->getCompWidth());
-            LOGI("layer 容器高度=%d",layer->getCompHeight());
-            LOGI("layer 数据的宽度=%d",layer->getDataWidth());
-            LOGI("layer 数据的高度=%d",layer->getDataHeight());
-            LOGI("layer 获取在容器中的图层位置=%d",layer->getLayerPositionAtRender());
-            LOGI("layer 位置X坐标=%f",layer->getPositionX());
-            LOGI("layer 位置Y坐标=%f",layer->getPositionY());
-            LOGI("layer 旋转角度=%f",layer->getRotation());
-            LOGI("layer 获取缩放后的宽度=%f", layer ->getScaleWidth());
-            LOGI("layer 获取缩放后的高度=%f", layer ->getScaleHeight());
-            LOGI("layer 获取原始宽度=%d", layer ->getOriginalWidth());
-            LOGI("layer 获取原始高度=%d", layer ->getOriginalHeight());
+            LOGI("layer name=%s", layer->getName());
+            LOGI("layer 容器宽度=%d", layer->getCompWidth());
+            LOGI("layer 容器高度=%d", layer->getCompHeight());
+            LOGI("layer 数据的宽度=%d", layer->getDataWidth());
+            LOGI("layer 数据的高度=%d", layer->getDataHeight());
+            LOGI("layer 获取在容器中的图层位置=%d", layer->getLayerPositionAtRender());
+            LOGI("layer 位置X坐标=%f", layer->getPositionX());
+            LOGI("layer 位置Y坐标=%f", layer->getPositionY());
+            LOGI("layer 旋转角度=%f", layer->getRotation());
+            LOGI("layer 获取缩放后的宽度=%f", layer->getScaleWidth());
+            LOGI("layer 获取缩放后的高度=%f", layer->getScaleHeight());
+            LOGI("layer 获取原始宽度=%d", layer->getOriginalWidth());
+            LOGI("layer 获取原始高度=%d", layer->getOriginalHeight());
         }
         return true;
-    }
-    else{
+    } else {
         return false;
     }
 }
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_com_lansong_testNative_TestNativeRenderAPI2_testSetMattingLayerPosition(JNIEnv *env,
-                                                                             jclass clazz,
-                                                                             jlong handle,
-                                                                             jint position) {
+Java_com_lansong_testNative_TestNativeRenderAPI2_testSetLayerPosition(JNIEnv *env,
+                                                                      jclass clazz,
+                                                                      jlong handle, jlong layer_id,
+                                                                      jint position) {
 
     ZSRender *pRender = (ZSRender *) handle;
     // 设置图层上下级的位置
-    if(pRender != nullptr){
-        ZSLayer *layer =pRender->getBackGroundLayer();
-        if(layer!= nullptr){
-            pRender->setLayerPosition(layer,position);
+    if (pRender != nullptr) {
+
+        ZSLayer *layer = (ZSLayer *) layer_id;
+        if (layer != nullptr) {
+            pRender->setLayerPosition(layer, position);
             return true;
-        }else{
+        } else {
             return false;
         }
-    }
-    else{
+    } else {
         return false;
     }
 
 
 }
+extern "C"
+JNIEXPORT jlong JNICALL
+Java_com_lansong_testNative_TestNativeRenderAPI2_getMattingLayer(JNIEnv *env, jclass clazz,
+                                                                 jlong handle) {
+    ZSRender *pRender = (ZSRender *) handle;
+    if (pRender != nullptr) {
+        ZSLayer *layer = pRender->getMattingLayer();
+        return (jlong) layer;
+    } else {
+        return 0;
+    }
+
+}
+extern "C"
+JNIEXPORT jlong JNICALL
+Java_com_lansong_testNative_TestNativeRenderAPI2_getBackGroundLayer(JNIEnv *env, jclass clazz,
+                                                                    jlong handle) {
+    ZSRender *pRender = (ZSRender *) handle;
+    if (pRender != nullptr) {
+        ZSLayer *layer = pRender->getBackGroundLayer();
+        return (jlong) layer;
+    } else {
+        return 0;
+    }
+}
+extern "C"
+JNIEXPORT jboolean JNICALL
+Java_com_lansong_testNative_TestNativeRenderAPI2_removeLayer(JNIEnv *env, jclass clazz,
+                                                             jlong handle, jlong layer_id) {
+    ZSRender *pRender = (ZSRender *) handle;
+    if (pRender != nullptr) {
+        ZSLayer *layer = (ZSLayer *) layer_id;
+        pRender->removeLayer(layer);
+        return true;
+    } else {
+        return false;
+    }
+}
+

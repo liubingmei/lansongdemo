@@ -147,7 +147,12 @@ public class TestNativeRenderActivity extends AppCompatActivity implements Camer
         nativeRender.getGreenMaxThreshold();
     }
 
-
+    /**
+     * 添加一个普通的图层
+     * @param pathFile
+     * @param layerType
+     * @return
+     */
     public boolean addLayer(String pathFile,String layerType){
         String path = copyAssets(getApplicationContext(), pathFile);
         Bitmap bmp = BitmapFactory.decodeFile(path);
@@ -156,11 +161,13 @@ public class TestNativeRenderActivity extends AppCompatActivity implements Camer
         // 增加一个Nv21 图层
         switch (layerType){
             case "nv21":
-                nativeRender.testAddLayerWithNv21(bmp.getWidth(),bmp.getHeight(),0,byteBuffer.array());
-                nativeRender.pushBackGroundWithNv21(bmp.getWidth(),bmp.getHeight(),90,byteBuffer.array());
+               // nativeRender.testAddLayerWithNv21(bmp.getWidth(),bmp.getHeight(),0,byteBuffer.array());
+                nativeRender.addLayerWithNv21(bmp.getWidth(),bmp.getHeight(),0,byteBuffer.array());
+                nativeRender.pushBackGroundWithNv21(bmp.getWidth(),bmp.getHeight(),90,byteBuffer.array()); // 背景层输入 ,使用Nv21格式
                 return true;
             case "rgba":
-                nativeRender.testAddLayer(bmp.getWidth(),bmp.getHeight(),byteBuffer.array());
+                //nativeRender.testAddRgbaLayer(bmp.getWidth(),bmp.getHeight(),byteBuffer.array());
+                nativeRender.addRgbaLayer(bmp.getWidth(),bmp.getHeight(),byteBuffer.array());
                 nativeRender.pushBackGroundRGBA(bmp.getWidth(),bmp.getHeight(),byteBuffer.array()); // 背景层输入 ,使用RGBA格式
                 return true;
             default:
@@ -179,17 +186,33 @@ public class TestNativeRenderActivity extends AppCompatActivity implements Camer
         }
     }
 
+    public boolean removeLayer(long layerId){
+        return nativeRender.removeLayer(layerId); // 删除指定图层
+    }
+
     public boolean getLayer(String layerType){
         switch (layerType){
             case "matting":
                 return nativeRender.testGetMattingLayer();  //获取matting 类型的图层
             case "background":
                 return nativeRender.testGetBackGroundLayer(); //获取背景图层
+
             case "all":
                 return nativeRender.testGetAllLayer(); //获取所有图层
             default:
                 return false;
         }
+    }
+    public long getLayerObj(String layerType){
+        switch(layerType){
+            case "mLayer":
+                return nativeRender.getMattingLayer(); // 获取matting 类型的图层
+            case "bLayer":
+                return nativeRender.getBackGroundLayer(); // 获取背景图层
+            default:
+                return 0;
+        }
+
     }
 
 
@@ -216,28 +239,46 @@ public class TestNativeRenderActivity extends AppCompatActivity implements Camer
 
 
             // 增加一个Nv21 图层 ,并设置背景层为Nv21类型
-            addLayer("20459084.jpg","nv21");
+            addLayer("20459084.jpg","rgba");
 
-            // 增加一个图层 RGBA 图层 ,并设置背景层为RGBA类型
-            addLayer("shoot_bg_default1.jpg","rgba");
+//             //增加一个图层 RGBA 图层 ,并设置背景层为RGBA类型
+//            addLayer("shoot_bg_default1.jpg","rgba");
 
-            //
-            String path = copyAssets(getApplicationContext(), "shoot_bg_default1.jpg");
-            Bitmap bmp = BitmapFactory.decodeFile(path);
-            ByteBuffer byteBuffer = ByteBuffer.allocate(bmp.getWidth() * bmp.getHeight() * 4);
-            bmp.copyPixelsToBuffer(byteBuffer);
-            //输入流;
-            nativeRender.pushBackGroundRGBA(bmp.getWidth(),bmp.getHeight(),byteBuffer.array());
+//
+//            //
+//            String path = copyAssets(getApplicationContext(), "shoot_bg_default1.jpg");
+//            Bitmap bmp = BitmapFactory.decodeFile(path);
+//            ByteBuffer byteBuffer = ByteBuffer.allocate(bmp.getWidth() * bmp.getHeight() * 4);
+//            bmp.copyPixelsToBuffer(byteBuffer);
+//            //输入流;
+//            nativeRender.pushBackGroundRGBA(bmp.getWidth(),bmp.getHeight(),byteBuffer.array());
         }
 
-        nativeRender.mattingOneFrameWithNv21(camWidth,camHeight,90,data,dstRgbaBytes);
+
+        //System.out.println("删除背景图层对象："+removeLayer(bLayer)); // 删除背景图层
+
+
+        // 创建抠图图层
+        // nativeRender.mattingOneFrameWithNv21(camWidth,camHeight,90,data,dstRgbaBytes);
+        nativeRender.mattingOneFrameWithRgba(camWidth,camHeight,90,data,dstRgbaBytes);
+
+        long bLayer= getLayerObj("bLayer");  // 获取背景图层
+        System.out.println("获取背景图层对象："+bLayer);
+        System.out.println("设置图层的上下级位置--->"+nativeRender.testSetLayerPosition(bLayer,3)); // 设置图层的上下级位置(会导致画面非常卡顿)
+
 
 
         System.out.println("获取图层MattingLayer -->"+getLayer("matting")); // 获取matting 类型的图层
 
+       // System.out.println("获取图层对象背景图层 -->"+getLayer("bLayer")); // 获取背景图层
+
+
+
+
        // System.out.println("删除background图层--->"+removeLayer("background")); // 不能删除MattingLayer 图层，否则会奔溃
 
-        System.out.println("获取图层BackGround--->"+getLayer("background")); // 获取背景图层
+       // System.out.println("获取图层BackGround--->"+getLayer("background")); // 获取背景图层
+
 
         System.out.println("获取所有图层--->"+getLayer("all"));
 
