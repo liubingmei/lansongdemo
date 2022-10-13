@@ -448,10 +448,15 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_addRgbaLayer(JNIEnv *env, jclas
     ZSRender *pRender = (ZSRender *) handle;
     if (pRender != nullptr) {
         ZSLayer *layer = pRender->addRgbaLayer(width, height);
+         // 打印下layer
+        LOGI("addRgbaLayer layer=%p", layer);
         if (layer != nullptr) {
             layer->setScaledValue(540, 540);
-            layer->setPosition(LEFT_TOP);
-
+            layer->setPosition(RIGHT_TOP);
+            layer->setName((int8_t *) "rgbaLayer"); //设置一个名字, 用于调试.
+            layer->setRotation(180); // 旋转90度    //  TODO 设置了旋转角度没什么用, 有待解决.
+            layer->setScaleType(VIDEO_SCALE_TYPE); //缩放 原始大小
+            layer->setLayerPosition(50); //设置图层位置
             unsigned char *src_buf = LOCK_ARRAY_FROM_JVM(rgba);
             layer->pushRgbaDataFromOut(src_buf);
             UNLOCK_ARRAY_TO_JVM(rgba, src_buf);
@@ -477,9 +482,9 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_addLayerWithNv21(JNIEnv *env, j
             layer->setName((int8_t *) "nv21"); //设置一个名字, 用于调试.
             layer->setRotation(90); // 旋转90度
             layer->setScaleType(ORIGINAL); //缩放 原始大小
-            unsigned char *src_buf = LOCK_ARRAY_FROM_JVM(nv21);
+            unsigned char *src_buf = LOCK_ARRAY_FROM_JVM(rgba);
             layer->pushNv21DataFromOut(src_buf);
-            UNLOCK_ARRAY_TO_JVM(nv21, src_buf);
+            UNLOCK_ARRAY_TO_JVM(rgba, src_buf);
         }
         return (long)layer;
     } else {
@@ -549,6 +554,7 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_testGetBackGroundLayer(JNIEnv *
     ZSRender *pRender = (ZSRender *) handle;
     if (pRender != nullptr) {
         ZSLayer *layer = pRender->getBackGroundLayer();
+        // 获取图层对象的属性
         if (layer != nullptr) {
             return true;
         } else {
@@ -570,6 +576,24 @@ Java_com_lansong_testNative_TestNativeRenderAPI2_testGetAllLayer(JNIEnv *env, jc
             ZSLayer *layer = *it;
             std::cout << *it;
             LOGI("layer name=%s", layer->getName());
+            // 如果layer 的名字是background 则设置图层的位置
+            if (strcmp((char *) layer->getName(), "background") == 0) {
+                layer->setPosition(LEFT_TOP);
+                layer->setRotation(180);
+                layer->setScaleType(FILL_COMPOSITION); // 设置图层的缩放类型
+               // pRender->setLayerPosition(layer, 0); // 设置图层的位置 会导致画面卡顿
+            // 否则如果 是camera 则设置图层的位置
+            }
+            else if (strcmp((char *) layer->getName(), "camera") == 0) {
+                layer->setPosition(POSITION_NONE);
+                layer->setRotation(270);
+                layer->setScaleType(VIDEO_SCALE_TYPE); // 设置图层的缩放类型
+            }
+            else if (strcmp((char*) layer->getName(),"rgbaLayer") ==0){
+                layer->setPosition(RIGHT_BOTTOM);
+                layer->setRotation(90);
+            }
+
             LOGI("layer 容器宽度=%d", layer->getCompWidth());
             LOGI("layer 容器高度=%d", layer->getCompHeight());
             LOGI("layer 数据的宽度=%d", layer->getDataWidth());
